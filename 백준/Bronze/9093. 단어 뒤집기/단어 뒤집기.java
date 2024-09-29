@@ -5,28 +5,30 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int num = sc.nextInt();
+        int T = sc.nextInt();
         Stack<Character> stack = new Stack<Character>();
-        sc.nextLine(); 
+        sc.nextLine();
 
-        StringBuilder result = new StringBuilder();
-        
-        for (int j = 0; j < num; j++) {
-            String input = sc.nextLine() + " "; 
-            for (int i = 0; i < input.length(); i++) {
-                if (input.charAt(i) == ' ') {
+        StringBuilder sb = new StringBuilder();
+
+        for (int j = 0; j < T; j++) {
+            String str = sc.nextLine() + " ";
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == ' ') {
                     while (!stack.isEmpty()) {
-                        result.append(stack.pop());
+                        sb.append(stack.pop());
                     }
-                    result.append(" "); 
+                    sb.append(" ");
                 } else {
-                    stack.push(input.charAt(i)); 
+                    stack.push(str.charAt(i));
                 }
             }
-            result.append("\n");
+            sb.append("\n");
         }
-        System.out.print(result.toString());
+        System.out.print(sb.toString());
+
         sc.close();
     }
 }
+
 
