@@ -43,7 +43,6 @@ public class Main {
             num[i] = Integer.parseInt(st.nextToken());
 
         //백트래킹
-        // 2. DFS 실행 (각 인덱스에서 탐색 시작)
         for (int i = 0; i < N; i++) {
             backTracking(i, 0);
         }
